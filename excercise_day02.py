@@ -1,10 +1,16 @@
 import numpy
 import pandas as pd
-data=open("/Users/sofisch/Downloads/data.pgxseg", "r")
-data=data.readlines()
+import matplotlib as plt
 
-data=data[1006:]
-df=pd.DataFrame(data)
+data="/Users/sofisch/Downloads/data.pgxseg"
 
-print(df
-      )
+with data as segfile:
+      for line in segfile.readlines():
+            if "#" not in line:
+                  with data as f:
+                        f.write(line)
+
+
+df=pd.DataFrame(data.csv, sep="\t")
+
+print(df)
